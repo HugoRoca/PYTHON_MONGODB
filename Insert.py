@@ -1,4 +1,4 @@
-from pymongo import MongoClient
+import pymongo
 from People import People
 
 modelPeopleList = [
@@ -9,13 +9,13 @@ modelPeopleList = [
     People("hugo5", "roca5", "24", "hugoroca@hotmail.com", "5")
 ]
 
-# client = pymongo.MongoClient(
-#     "mongodb+srv://hugoroca:PWv0VINQIeSkMIeP@cluster0-xu1hg.mongodb.net/test")
+client = pymongo.MongoClient(
+    "mongodb+srv://hugoroca:PWv0VINQIeSkMIeP@cluster0-xu1hg.mongodb.net/test")
 
-# db = client.test
+db = client.test
 
-# collection = db.People
+collection = db.People
 
 for people in modelPeopleList:
-    print(people.toDbCollection())
-    #collection.insert(people.toDbCollection())
+    #print(people.toDbCollection())
+    collection.insert(people.toDbCollection())
