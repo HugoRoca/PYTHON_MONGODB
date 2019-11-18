@@ -7,7 +7,7 @@ class People:
         self.email = email
         self.phone = phone
 
-    def toDbCollection(self):
+    def json(self):
         return {
             "name": self.name,
             "lastname": self.lastname,

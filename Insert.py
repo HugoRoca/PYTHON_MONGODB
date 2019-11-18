@@ -18,4 +18,4 @@ collection = db.People
 
 for people in modelPeopleList:
     #print(people.toDbCollection())
-    collection.insert(people.toDbCollection())
+    collection.insert(people.json())
