@@ -1,13 +1,14 @@
-import pymongo
+from People import People
+from Connection import Connection
 
-client = pymongo.MongoClient(
-    "mongodb+srv://hugoroca:PWv0VINQIeSkMIeP@cluster0-xu1hg.mongodb.net/test")
+def Find():
+    conection = Connection("test", "People")
+    
+    collection = conection.getConnection()
 
-db = client.test
+    cursor = collection.find()
 
-collection = db.People
-
-cursor = collection.find()
-
-for people in cursor:
-    print (people['name'] + ' - ' + people['lastname'] + ' - ' + people['age'] + ' - ' + people['email'] + ' - ' + people['phone'])
+    for people in cursor:
+        print (people['name'] + ' - ' + people['lastname'] + ' - ' + people['age'] + ' - ' + people['email'] + ' - ' + people['phone'])
+        
+Find()
