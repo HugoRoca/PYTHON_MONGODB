@@ -1,7 +1,9 @@
-import pymongo
 from People import People
+from Connection import Connection
 
-def listMongodb:
+def listMongodb():
+    conection = Connection()
+    
     modelPeopleList = [
         People("hugo1", "roca1", "24", "hugoroca@hotmail.com", "1"),
         People("hugo2", "roca2", "24", "hugoroca@hotmail.com", "2"),
@@ -10,12 +12,7 @@ def listMongodb:
         People("hugo5", "roca5", "24", "hugoroca@hotmail.com", "5")
     ]
 
-    client = pymongo.MongoClient(
-        "mongodb+srv://hugoroca:PWv0VINQIeSkMIeP@cluster0-xu1hg.mongodb.net/test")
-
-    db = client.test
-
-    collection = db.People
+    collection = conection.getConnection();
 
     for people in modelPeopleList:
         #print(people.toDbCollection())
