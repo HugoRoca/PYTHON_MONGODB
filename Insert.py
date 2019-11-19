@@ -2,7 +2,7 @@ from People import People
 from Connection import Connection
 
 def listMongodb():
-    conection = Connection()
+    conection = Connection("test", "People")
     
     modelPeopleList = [
         People("hugo1", "roca1", "24", "hugoroca@hotmail.com", "1"),
